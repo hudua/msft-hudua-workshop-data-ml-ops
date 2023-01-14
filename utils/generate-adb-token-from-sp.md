@@ -32,6 +32,12 @@ Body
 
 ```
 
+You will want to create a group to specify where the service principal should belong to by calling:
+
+```
+GET: 2.0/preview/scim/v2/Groups
+```
+
 3. Then, provide this service principal permission in Databricks workspace to be able to use PAT
 
 4. Finally, use the service principal AAD token to generate a Personal Access Token:
