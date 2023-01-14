@@ -17,5 +17,5 @@ stages:
 
     - script: |
         pip install databricks-api
-        python pipelines/databricks-model-training-automation.py $(TOKEN)
+        python pipelines/databricks-model-training-automation.py $(TOKENUSER) $(build.buildid)
       displayName: 'Model training'
