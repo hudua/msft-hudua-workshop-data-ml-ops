@@ -2,17 +2,14 @@ import sys
 from databricks_api import DatabricksAPI
 import time, json
 
-env = sys.argv[1]
-token = sys.argv[2]
-build_id = sys.argv[3]
+token = sys.argv[1]
+build_id = sys.argv[2]
 print(env)
 
-configs = json.load(open('configs/settings.json',))
 
-host = configs[env]['host']['value']
-amlname = configs[env]['amlname']['value']
-repo_id = configs[env]['repo_id']['value']
-cluster_id = configs[env]['cluster_id']['value']
+host = 
+repo_id = 
+cluster_id = 
 
 db = DatabricksAPI(
     host=host,
@@ -31,8 +28,7 @@ job_id = db.jobs.create_job(
 )['job_id']
 
 run_id = db.jobs.run_now(
-    job_id=job_id,
-    notebook_params = {"amlname": amlname, "build_id": build_id}
+    job_id=job_id
 )['run_id']
 
 N = 30
